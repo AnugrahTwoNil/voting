@@ -1,6 +1,9 @@
 <?php
-include "header.php";
-include "config.php";
+include "../header/header.php";
+include "../header/config.php";
+
+$current_page = basename($_SERVER['PHP_SELF']);
+
 ?>
 
 <div class="container-fluid py-4">
@@ -8,11 +11,11 @@ include "config.php";
         <div class="col-12">
             <div class="card mb-4">
                 <div class="card-header pb-0">
-                    <h6>Daftar siswa</h6>
+                    <h6>Daftar Calon</h6>
                 </div>
                 <div class="card px-0 pt-0 pb-2">
                     <div class="table p-0">
-                        <a href="tambah_siswa.php" class="btn btn-primary ms-3">Tambah Siswa</a>
+                        <a href="tambah_calon.php" class="btn btn-primary ms-3">Tambah Calon</a>
                         <table class="table align-items-center mb-0">
                             <thead>
                                 <tr>
@@ -23,31 +26,34 @@ include "config.php";
                                         Nama</th>
                                     <th
                                         class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        Kelas</th>
+                                        Visi</th>
                                     <th
                                         class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        Jurusan</th>
+                                        Misi</th>
                                     <th
                                         class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        Alamat</th>
+                                        Foto</th>
+                                    <th
+                                        class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                        Aksi</th>
                                 </tr>
                             </thead>
                             <?php
                             $no = 1;
-                            $data = mysqli_query($koneksi, "select * FROM tbl_siswa");
+                            $data = mysqli_query($koneksi, "select * FROM tbl_calon");
                             ?>
                             <tbody>
                                 <?php foreach ($data as $row) { ?>
                                     <tr>
                                         <td>
-                                            <div class="d-flex ms-3 mb-3">
+                                            <div class="d-flex ms-3">
                                                 <div>
                                                     <p class="mb-0 text-sm"><?= $no++; ?></p>
                                                 </div>
                                             </div>
                                         </td>
                                         <td>
-                                            <div class="d-flex flex-column justify-content-center">
+                                            <div class="d-flex mt-2">
                                                 <p><?= $row['nama']; ?></p>
                                             </div>
                         </div>
@@ -55,15 +61,21 @@ include "config.php";
                         <td>
                             <div class="d-flex ps-5 py-1">
                                 <div>
-                                    <p class="mb-0 text-sm"><?= $row['kelas']; ?></p>
+                                    <p class="mb-0 text-sm"><?= $row['visi']; ?></p>
                                 </div>
                             </div>
                         </td>
-                        <td class="align-middle text-center text-sm">
-                            <p class="text-xs font-weight-bold mb-0"><?= $row['jurusan']; ?></p>
+                        <td class="text-sm">
+                            <p class="text-xs font-weight-bold mb-0"><?= $row['misi']; ?></p>
                         </td>
-                        <td class="align-middle text-center text-sm">
-                            <p class="text-xs font-weight-bold mb-0"><?= $row['alamat']; ?></p>
+                        <td class="text-sm">
+                            <p class="text-xs font-weight-bold mb-0"><?= $row['foto']; ?></p>
+                        </td>
+                        <td class="align-middle text-center">
+                            <a href="edit_calon.php?id=<?= $row['id_calon']; ?>" class="btn btn-primary font-weight-bold"
+                                data-toggle="tooltip" data-original-title="Edit Calon">Edit</a>
+                            <a href="#" class="btn btn-danger font-weight-bold" data-toggle="tooltip"
+                                data-original-title="Delete Calon" onclick="hapusCalon(<?= $row['id_calon'] ?>)">Delete</a>
                         </td>
                         </tr>
                     <?php } ?>
@@ -173,6 +185,25 @@ include "config.php";
 <script async defer src="https://buttons.github.io/buttons.js"></script>
 <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
 <script src="../assets/js/soft-ui-dashboard.min.js?v=1.1.0"></script>
+
+<script>
+    Swal.fire({
+        title: "Do you want to save the changes?",
+        showDenyButton: true,
+        showCancelButton: true,
+        confirmButtonText: "Hapus",
+        denyButtonText: `Jangan Hapus`,
+    }).then((result) => {
+        if (result.isConfirmed) {
+            Swal.fire("Deleted!", "", "success");
+            window.location = "delete_calon.php?id=" + id;
+        } else if (result.isDenied) {
+            Swal.fire("Changes are not saved", "", "info");
+        }
+    });
+
+</script>
+
 </body>
 
 </html>
