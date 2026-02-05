@@ -32,9 +32,6 @@ $current_page = basename($_SERVER['PHP_SELF']);
                                         Misi</th>
                                     <th
                                         class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        Foto</th>
-                                    <th
-                                        class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                         Aksi</th>
                                 </tr>
                             </thead>
@@ -53,9 +50,18 @@ $current_page = basename($_SERVER['PHP_SELF']);
                                             </div>
                                         </td>
                                         <td>
-                                            <div class="d-flex mt-2">
+                                            <div class="row">
+                                                <div class="col-2">
+                            <img src="../../assets/img<?= $row['foto']; ?>" class="avatar avatar-sm me-3" style="object-fit">
+
+                                                </div>
+                                                <div class="col mt-2">
                                                 <p><?= $row['nama']; ?></p>
+
+                                                </div>
                                             </div>
+                                   
+                                            </td>
                         </div>
                         </td>
                         <td>
@@ -67,9 +73,6 @@ $current_page = basename($_SERVER['PHP_SELF']);
                         </td>
                         <td class="text-sm">
                             <p class="text-xs font-weight-bold mb-0"><?= $row['misi']; ?></p>
-                        </td>
-                        <td class="text-sm">
-                            <p class="text-xs font-weight-bold mb-0"><?= $row['foto']; ?></p>
                         </td>
                         <td class="align-middle text-center">
                             <a href="edit_calon.php?id=<?= $row['id_calon']; ?>" class="btn btn-primary font-weight-bold"
@@ -187,21 +190,22 @@ $current_page = basename($_SERVER['PHP_SELF']);
 <script src="../assets/js/soft-ui-dashboard.min.js?v=1.1.0"></script>
 
 <script>
-    Swal.fire({
-        title: "Do you want to save the changes?",
-        showDenyButton: true,
-        showCancelButton: true,
-        confirmButtonText: "Hapus",
-        denyButtonText: `Jangan Hapus`,
-    }).then((result) => {
-        if (result.isConfirmed) {
-            Swal.fire("Deleted!", "", "success");
-            window.location = "delete_calon.php?id=" + id;
-        } else if (result.isDenied) {
-            Swal.fire("Changes are not saved", "", "info");
-        }
-    });
-
+    function hapusCalon(id) {
+        Swal.fire({
+            title: "Do you want to save the changes?",
+            showDenyButton: true,
+            showCancelButton: true,
+            confirmButtonText: "Hapus",
+            denyButtonText: `Jangan Hapus`
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire("Dihapus!", "", "success");
+                window.location.href = 'delete_calon.php?id=' + id;
+            } else if (result.isDenied) {
+                Swal.fire("Changes are not saved", "", "info");
+            }
+        });
+    }
 </script>
 
 </body>

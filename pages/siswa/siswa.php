@@ -46,7 +46,17 @@ $current_page = basename(path: $_SERVER['PHP_SELF']);
                                             <p class="mb-0 text-sm"><?= $no++; ?></p>
                                         </td>
                                         <td>
-                                            <p><?= $row['nama']; ?></p>
+                                            <div class="row">
+                                                <div class="col-2">
+                                                    <img src="../../assets/img/<?= $row['foto']; ?>" class="avatar avatar-sm me-3 rounded-circle" style="object-fit">
+                                                </div>
+                                                <div class="col mt-2"><p><?= $row['nama']; ?></p></div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col">
+                                                    <p class="text-xs font-weight-bold mb-0"><?= $row['email']; ?></p>
+                                                </div>
+                                            </div>
                                         </td>
                                         <td>
                                             <div class="d-flex py-1">

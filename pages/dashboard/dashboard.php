@@ -1,5 +1,6 @@
 <?php 
 include "../header/header.php";
+include "../header/config.php";
 
 $currentPage = basename($_SERVER['PHP_SELF']);
 ?>
@@ -56,9 +57,13 @@ $currentPage = basename($_SERVER['PHP_SELF']);
                                             aria-hidden="true"></i>
                                     </div>
                                     <h5 class="text-white font-weight-bolder mb-0 mt-3">
-                                        357
+                                        <?php $query = mysqli_query($koneksi, "SELECT COUNT(id_calon) as Jumlah_Calon FROM tbl_calon");
+                                        $calon = mysqli_fetch_assoc($query);
+
+                                        echo $calon['Jumlah_Calon']
+                                        ?>
                                     </h5>
-                                    <span class="text-white text-sm">Click Events</span>
+                                    <span class="text-white text-sm">Jumlah Calon Ketua Osis</span>
                                 </div>
                                 <div class="col-4">
                                     <div class="dropstart text-end mb-6">

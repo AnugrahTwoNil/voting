@@ -28,13 +28,14 @@ $current_page = basename($_SERVER['PHP_SELF']);
                                     <th
                                         class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                         Password</th>
-                                    <th
-                                        class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                         Nama</th>
                                     <th
                                         class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                         Alamat</th>
-                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                    <th
+                                        class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                        
                                         Aksi
                                     </th>
                                 </tr>
@@ -50,7 +51,17 @@ $current_page = basename($_SERVER['PHP_SELF']);
                                             <p class="mb-0 text-sm"><?= $no++; ?></p>
                                         </td>
                                         <td class="">
-                                            <p><?= $row['username']; ?></p>
+                                            <div class="row">
+                                                <div class="col-2">
+                                                    <img src="../../assets/img/<?= $row['foto']; ?>"
+                                                        class="avatar avatar-sm me-3" style="object-fit">
+
+
+                                                </div>
+                                                <div class="col">
+                                                    <p><?= $row['username']; ?></p>
+                                                </div>
+                                            </div>
                                         </td>
                                         <td class="text-sm">
                                             <p class="mb-0 text-sm"><?= $row['password']; ?></p>
@@ -61,15 +72,16 @@ $current_page = basename($_SERVER['PHP_SELF']);
                                         <td class="text-sm">
                                             <p class="text-xs font-weight-bold mb-0"><?= $row['alamat']; ?></p>
                                         </td>
+
                                         <td class="align-middle text-center">
                                             <a href="edit_admin.php?id=<?= $row['id_admin']; ?>"
                                                 class="btn btn-primary font-weight-bold" data-toggle="tooltip"
                                                 data-original-title="Edit Admin">Edit</a>
 
-                            <a href="#" class="btn btn-danger font-weight-bold"
-                                data-toggle="tooltip" data-original-title="Delete Admin"
-                                onclick="hapusAdmin(<?= $row['id_admin'] ?>)">Delete</a>
-                        </td>
+                                            <a href="#" class="btn btn-danger font-weight-bold" data-toggle="tooltip"
+                                                data-original-title="Delete Admin"
+                                                onclick="hapusAdmin(<?= $row['id_admin'] ?>)">Delete</a>
+                                        </td>
                                     </tr>
                                 <?php } ?>
                             </tbody>
