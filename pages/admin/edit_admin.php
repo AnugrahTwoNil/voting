@@ -1,7 +1,7 @@
 <?php
 include "../header/config.php";
 
-$curren_page = basename($_SERVER['PHP_SELF']);
+$current_page = basename($_SERVER['PHP_SELF']);
 
 $id = $_GET["id"] ?? null;
 
@@ -122,4 +122,4 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             </div>
         </div>
     </div>
-</div>
+</div><link rel="stylesheet" href="../../assets/css/soft-ui-dashboard.css">

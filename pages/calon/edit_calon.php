@@ -15,7 +15,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     $nama = $_POST['nama'];
     $visi = $_POST['visi'];
-    $misi = $_POST['misi'];
 
     if ($_FILES['foto']['name'] != "") {
         $foto = $_FILES['foto']['name'];
@@ -29,14 +28,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $sql = "UPDATE tbl_calon SET 
         nama = '$nama',
         visi = '$visi',
-        misi = '$misi',
         foto = '$foto'
         WHERE id_calon = '$id'";
 } else {
     $sql = "UPDATE tbl_calon SET 
         nama = '$nama',
         visi = '$visi',
-        misi = '$misi',
         WHERE id_calon = '$id'";
 }
         mysqli_query($koneksi, $sql);
@@ -67,13 +64,6 @@ include "../header/header.php";
                         <div class="col-sm-10">
                             <input type="text" class="form-control" id="visi" name="visi" placeholder="Masukan Visi" required
                                 value="<?= $calon['visi'] ?>">
-                        </div>
-                    </div>
-                    <div class="row mb-3">
-                        <label for="misi" class="col-sm-2 col-form-label">Misi :</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" id="misi" name="misi" placeholder="Masukan Misi" required
-                                value="<?= $calon['misi'] ?>">
                         </div>
                     </div>
                     <div class="row mb-3">
@@ -116,3 +106,4 @@ include "../header/header.php";
         </div>
     </div>
 </div>
+<link rel="stylesheet" href="../../assets/css/soft-ui-dashboard.css">

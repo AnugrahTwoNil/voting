@@ -69,8 +69,8 @@ $curren_page = basename($_SERVER['PHP_SELF']);
                     //move the file to the folder
                     move_uploaded_file($tmp_file, $folder . $namaBaru);
 
-                    mysqli_query
-                    ($koneksi, "INSERT INTO tbl_calon(nama, visi, misi, foto) VALUES ('$nama','$visi','$misi','$namaBaru')");
+                    
+                    $query = "INSERT INTO tbl_calon(nama, visi, misi, foto) VALUES ('$nama','$visi','$misi','$namaBaru')";
                     //insert into table
 
                     // $query = "INSERT INTO tbl_calon(nama, visi, misi, foto) 
@@ -98,3 +98,4 @@ $curren_page = basename($_SERVER['PHP_SELF']);
         </div>
     </div>
 </div>
+<link rel="stylesheet" href="../../assets/css/soft-ui-dashboard.css">

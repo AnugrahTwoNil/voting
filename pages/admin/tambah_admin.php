@@ -88,3 +88,4 @@ $current_page = basename($_SERVER['PHP_SELF']);
         </div>
     </div>
 </div>
+<link rel="stylesheet" href="../../assets/css/soft-ui-dashboard.css">

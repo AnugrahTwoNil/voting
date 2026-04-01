@@ -23,13 +23,13 @@ $current_page = basename($_SERVER['PHP_SELF']);
                                         No</th>
                                     <th
                                         class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                        Nama</th>
+                                        </th>
+                                    <th
+    class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2"> Nama
+    </th>
                                     <th
                                         class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                         Visi</th>
-                                    <th
-                                        class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        Misi</th>
                                     <th
                                         class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                         Aksi</th>
@@ -53,26 +53,22 @@ $current_page = basename($_SERVER['PHP_SELF']);
                                             <div class="row">
                                                 <div class="col-2">
                             <img src="../../assets/img<?= $row['foto']; ?>" class="avatar avatar-sm me-3" style="object-fit">
-
+</td> <td>
                                                 </div>
                                                 <div class="col mt-2">
                                                 <p><?= $row['nama']; ?></p>
-
+</td>
                                                 </div>
                                             </div>
-                                   
                                             </td>
-                        </div>
+                        
                         </td>
                         <td>
                             <div class="d-flex ps-5 py-1">
                                 <div>
-                                    <p class="mb-0 text-sm"><?= $row['visi']; ?></p>
+                                    <p class="mb-0 text-sm text-wrap"><?= $row['visi']; ?></p>
                                 </div>
                             </div>
-                        </td>
-                        <td class="text-sm">
-                            <p class="text-xs font-weight-bold mb-0"><?= $row['misi']; ?></p>
                         </td>
                         <td class="align-middle text-center">
                             <a href="edit_calon.php?id=<?= $row['id_calon']; ?>" class="btn btn-primary font-weight-bold"
@@ -82,6 +78,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
                         </td>
                         </tr>
                     <?php } ?>
+                    </div>
                     </tbody>
                 </div>
             </div>
@@ -91,9 +88,6 @@ $current_page = basename($_SERVER['PHP_SELF']);
 
 </main>
 <div class="fixed-plugin">
-    <a class="fixed-plugin-button text-dark position-fixed px-3 py-2">
-        <i class="fa fa-cog py-2"> </i>
-    </a>
     <div class="card shadow-lg ">
         <div class="card-header pb-0 pt-3 ">
             <div class="float-start">
@@ -209,5 +203,6 @@ $current_page = basename($_SERVER['PHP_SELF']);
 </script>
 
 </body>
+<link rel="stylesheet" href="../../assets/css/soft-ui-dashboard.css">
 
 </html>

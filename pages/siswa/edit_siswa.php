@@ -137,3 +137,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </div>
     </div>
 </div>
+
+<link rel="stylesheet" href="../../assets/css/soft-ui-dashboard.css">
