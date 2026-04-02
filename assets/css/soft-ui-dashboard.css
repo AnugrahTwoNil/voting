@@ -21944,11 +21944,7 @@ fieldset:disabled .btn {
   color: #eab308;
 }
 
-.btn-danger:hover,
-.btn.bg-gradient-danger:hover {
-  background-color: #82CDFF;
-  border-color: #82CDFF;
-}
+
 
 .btn-danger .btn.bg-outline-danger,
 .btn.bg-gradient-danger .btn.bg-outline-danger {

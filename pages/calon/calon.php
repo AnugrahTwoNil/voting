@@ -16,6 +16,12 @@ $current_page = basename($_SERVER['PHP_SELF']);
                 <div class="card px-0 pt-0 pb-2">
                     <div class="table p-0">
                         <a href="tambah_calon.php" class="btn btn-primary ms-3">Tambah Calon</a>
+                            <form action="export_pdf_calon.php" method="POST" target="_blank">
+                                <input type="hidden">
+                                    <button type="submit" class="btn btn-danger ms-4">
+                                        Export PDF
+                                    </button>
+                                </form>
                         <table class="table align-items-center mb-0">
                             <thead>
                                 <tr>

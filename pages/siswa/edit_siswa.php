@@ -121,7 +121,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         <div class="row">
                             <div class="col">
                                 <img src="../../assets/img<?= $siswa['foto']; ?>" class="avatar avatar-sm m-3"
-                                    style="object-fit">
+                                    >
 
                             </div>
                         </div>

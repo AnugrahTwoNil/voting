@@ -13,8 +13,13 @@ $current_page = basename(path: $_SERVER['PHP_SELF']);
                     <h6>Daftar siswa</h6>
                 </div>
                 <div class="card px-0 pt-0 pb-2">
-                    <div class="table p-0">
-                        <a href="tambah_siswa.php" class="btn btn-primary ms-3">Tambah Siswa</a>
+                <div class="table p-0">
+                        <a href="tambah_siswa.php" class="btn btn-danger ms-3 ">Tambah Siswa</a>
+                <form action="export_pdf_siswa.php" method="POST" target="_blank">
+                            <button type="submit" class="btn btn-danger ms-4">
+                            Export PDF
+                        </button>
+                </form>
                         <table class="table align-items-center mb-0">
                             <thead>
                                 <tr>
@@ -48,13 +53,14 @@ $current_page = basename(path: $_SERVER['PHP_SELF']);
                                         <td>
                                             <div class="row">
                                                 <div class="col-2">
-                                                    <img src="../../assets/img/<?= $row['foto']; ?>" class="avatar avatar-sm me-3 rounded-circle" style="object-fit">
+                                                    <img src="../../assets/img<?= $row['foto']; ?>" alt="" class="avatar avatar-md rounded-circle"
+                                                    style="width: 100px; height: 100px; object-fit: cover;">
                                                 </div>
-                                                <div class="col mt-2"><p><?= $row['nama']; ?></p></div>
+                                                <div class="col ms-5" style="margin-top: 40px;"><p><?= $row['nama']; ?></p></div>
                                             </div>
                                             <div class="row">
                                                 <div class="col">
-                                                    <p class="text-xs font-weight-bold mb-0"><?= $row['email']; ?></p>
+                                                    <p class="text-xs font-weight-bold mb-0 mt-3"><?= $row['email']; ?></p>
                                                 </div>
                                             </div>
                                         </td>
@@ -81,6 +87,7 @@ $current_page = basename(path: $_SERVER['PHP_SELF']);
                                                 data-original-title="Delete Siswa">Delete</a>
                                         </td>
                                     </tr>
+                                    
                                 <?php } ?>
                             </tbody>
                     </div>
