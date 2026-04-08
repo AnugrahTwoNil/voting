@@ -58,7 +58,8 @@ $current_page = basename($_SERVER['PHP_SELF']);
                                         <td>
                                             <div class="row">
                                                 <div class="col-2">
-                            <img src="../../assets/img<?= $row['foto']; ?>" class="avatar avatar-sm me-3" style="object-fit">
+                            <img src="../../assets/img<?= $row['foto']; ?>" class="avatar avatar-md rounded-circle"
+                                                    style="width: 100px; height: 100px; object-fit: cover;"
 </td> <td>
                                                 </div>
                                                 <div class="col mt-2">

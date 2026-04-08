@@ -120,7 +120,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         <label for="foto" class="col-sm-2 col-form-label">Foto :</label>
                         <div class="row">
                             <div class="col">
-                                <img src="../../assets/img<?= $siswa['foto']; ?>" class="avatar avatar-sm m-3"
+                                <img src="../../assets/img<?= $siswa['foto']; ?>" class="avatar avatar-md rounded-circle"
+                                                    style="width: 100px; height: 100px; object-fit: cover; margin-bottom: 20px;"
                                     >
 
                             </div>

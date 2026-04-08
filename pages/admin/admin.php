@@ -30,7 +30,10 @@ $current_page = basename($_SERVER['PHP_SELF']);
                                         Id</th>
                                     <th
                                         class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                        Username</th>
+                                        </th>
+                                    <th
+                                        class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                        Username</th>                                    
                                     <th
                                         class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                         Password</th>
@@ -60,10 +63,11 @@ $current_page = basename($_SERVER['PHP_SELF']);
                                             <div class="row">
                                                 <div class="col-2">
                                                     <img src="../../assets/img/<?= $row['foto']; ?>"
-                                                        class="avatar avatar-sm me-3" style="object-fit">
-
-
+                                                        class="avatar avatar-md rounded-circle"
+                                                    style="width: 100px; height: 100px; object-fit: cover;">
+</td> <td>
                                                 </div>
+
                                                 <div class="col">
                                                     <p><?= $row['username']; ?></p>
                                                 </div>
