@@ -1,4 +1,7 @@
 <?php
+$pageTitle = "Laporan";
+
+
 include "../header/header.php";
 include "../header/config.php";
 
@@ -19,7 +22,7 @@ foreach ($query as $row) {
         <div class="card-header">
             <form action="export_pdf.php" method="POST" target="_blank">
                 <input type="hidden" name="chart_image" id="chart_image">
-                <button type="submit" onclick="exportPDF()" class="btn btn-danger">
+                <button type="submit" onclick="exportPDF()" class="btn btn-danger" id="btn-primary">
                     Export PDF
                 </button>
             </form>

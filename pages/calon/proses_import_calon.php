@@ -1,5 +1,8 @@
+
+
 <?php
-include "../header/config.php"; // sesuaikan dengan path
+include "../header/config.php";
+include "../header/header.php";
 
 
 if (isset($_FILES['file_excel']['tmp_name'])) {
@@ -42,8 +45,20 @@ if (isset($_FILES['file_excel']['tmp_name'])) {
     fclose($file);
 
 
-    echo "<script>
-        alert('Import berhasil!');
-        window.location='calon.php';
+                        echo "<script>
+        Swal.fire({
+            title: 'Good job!',
+            text: 'Data Berhasil Disimpan!',
+            icon: 'success'
+        }).then(() => {
+            window.location.href = 'calon.php';
+        });
     </script>";
-}
+                    } else {
+                        echo "<div class='alert alert-danger text-center'>
+                Gagal : " . mysqli_error($koneksi) . "
+            </div>";
+                    }
+                ?>
+            </div>
+        </div>

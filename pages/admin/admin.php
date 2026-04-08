@@ -1,5 +1,8 @@
 
 <?php
+$pageTitle = "Admin";
+
+
 include "../header/header.php";
 include "../header/config.php";
 
@@ -31,6 +34,17 @@ $current_page = basename($_SERVER['PHP_SELF']);
                         <div class="col-auto">
                         <a href="import_admin.php" class="btn btn-danger ms-3" id="btn-dark">
                             Import DATA</a>
+                        </div>
+                        <div class="col-auto">
+                            <a href="../../Template_admin.csv" class="btn btn-danger ms-3" id="btn-dark" download>
+                                Download Template Excel
+                            </a>
+                        </div>
+                        <div class="col-auto">
+                            <a href="#" class="btn btn-danger font-weight-bold" id="btn-danger"
+                                onclick="hapusSEMUA()" data-toggle="tooltip"
+                                    data-original-title="Delete Siswa">Hapus Semua
+                            </a>
                         </div>
                         <table class="table align-items-center mb-0">
                             <thead>
@@ -100,7 +114,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
 
                                             <a href="#" class="btn btn-danger font-weight-bold" data-toggle="tooltip"
                                                 data-original-title="Delete Admin" id="btn-danger"
-                                                onclick="hapusAdmin(<?= $row['id_admin'] ?>)">Delete</a>
+                                                onclick="hapusAdmin(<?= $row['id_admin'] ?>)">Hapus</a>
                                         </td>
                                     </tr>
                                 <?php } ?>
@@ -218,13 +232,34 @@ $current_page = basename($_SERVER['PHP_SELF']);
                 icon: "warning",
                 showDenyButton: true,
                 showCancelButton: true,
-                confirmButtonText: "Delete",
+                confirmButtonText: "Hapus",
                 denyButtonText: `Jangan Hapus`,
                 cancelButtonText: "Batalkan",
             }).then((result) => {
                 if (result.isConfirmed) {
                     Swal.fire("Deleted!", "", "success");
                     window.location = "delete_admin.php?id=" + id;
+                } else if (result.isDenied) {
+                    Swal.fire("Data tidak dihapus", "", "info");
+                }
+            });
+        }
+
+        
+        function hapusSEMUA() {
+            Swal.fire({
+                title: "Apakah Anda Yakin?",
+                text: "Data yang dihapus tidak dapat dikembalikan!",
+                icon: "warning",
+                showDenyButton: true,
+                showCancelButton: true,
+                confirmButtonText: "Hapus Semua",
+                denyButtonText: `Jangan Hapus`,
+                cancelButtonText: "Batalkan",
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    Swal.fire("Terhapus semua!", "", "Berhasil");
+                    window.location = "delete_all_admin.php";
                 } else if (result.isDenied) {
                     Swal.fire("Data tidak dihapus", "", "info");
                 }

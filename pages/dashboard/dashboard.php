@@ -3,7 +3,10 @@ include "../header/header.php";
 include "../header/config.php";
 
 $currentPage = basename($_SERVER['PHP_SELF']);
+
+$pageTitle = "Dashboard";
 ?>
+
 
 
 <div class="container-fluid py-4">
@@ -173,7 +176,7 @@ $currentPage = basename($_SERVER['PHP_SELF']);
         </div>
         <div class="container text-center">
           <div class="d-flex flex-column justify-content-center align-items-center">
-            <h1 class="pb-5 pt-3">Calon Ketua Osis</h1>
+            <h1 class="pb-5 pt-3">Calon Ketua OSIS</h1>
             <div class="d-flex" data-aos="fade-up" data-aos-delay="200">
             </div>
             <div class="row" data-aos="fade-up" data-aos-delay="300">

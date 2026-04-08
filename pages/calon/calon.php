@@ -1,5 +1,8 @@
 
 <?php
+$pageTitle = "Calon Ketua OSIS";
+
+
 include "../header/header.php";
 include "../header/config.php";
 
@@ -31,6 +34,17 @@ $current_page = basename($_SERVER['PHP_SELF']);
                         <div class="col-auto">
                         <a href="import_calon.php" class="btn btn-danger ms-3" id="btn-dark">
                             Import DATA</a>
+                        </div>
+                        <div class="col-auto">
+                            <a href="../../Template_calon.csv" class="btn btn-danger ms-3" id="btn-dark" download>
+                                Download Template Excel
+                            </a>
+                        </div>
+                        <div class="col-auto">
+                            <a href="#" class="btn btn-danger font-weight-bold" id="btn-danger"
+                                onclick="hapusSEMUA()" data-toggle="tooltip"
+                                    data-original-title="Delete Siswa">Hapus Semua
+                            </a>
                         </div>
                         <table class="table align-items-center mb-0">
                             <thead>
@@ -203,7 +217,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
 <script>
     function hapusCalon(id) {
         Swal.fire({
-            title: "Do you want to save the changes?",
+            title: "Apakah Anda Yakin?",
             showDenyButton: true,
             showCancelButton: true,
             confirmButtonText: "Hapus",
@@ -213,10 +227,30 @@ $current_page = basename($_SERVER['PHP_SELF']);
                 Swal.fire("Dihapus!", "", "success");
                 window.location.href = 'delete_calon.php?id=' + id;
             } else if (result.isDenied) {
-                Swal.fire("Changes are not saved", "", "info");
+                Swal.fire("Data tidak dihapus", "", "info");
             }
         });
     }
+
+            function hapusSEMUA() {
+            Swal.fire({
+                title: "Apakah Anda Yakin?",
+                text: "Data yang dihapus tidak dapat dikembalikan!",
+                icon: "warning",
+                showDenyButton: true,
+                showCancelButton: true,
+                confirmButtonText: "Hapus Semua",
+                denyButtonText: `Jangan Hapus`,
+                cancelButtonText: "Batalkan",
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    Swal.fire("Terhapus semua!", "", "Berhasil");
+                    window.location = "delete_all_calon.php";
+                } else if (result.isDenied) {
+                    Swal.fire("Data tidak dihapus", "", "info");
+                }
+            });
+        }
 </script>
 
 </body>

@@ -1,6 +1,7 @@
 <?php
 include "../header/config.php";
 
+
 $current_page = basename($_SERVER['PHP_SELF']);
 
 $id = $_GET["id"] ?? null;

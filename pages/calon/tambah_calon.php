@@ -27,12 +27,6 @@ $curren_page = basename($_SERVER['PHP_SELF']);
                         </div>
                     </div>
                     <div class="row mb-3">
-                        <label for="jurusan" class="col-sm-2 col-form-label">Misi :</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" id="jurusan" name="misi" placeholder="Masukan Misi" required>
-                        </div>
-                    </div>
-                    <div class="row mb-3">
                         <label for="alamat" class="col-sm-2 col-form-label">Foto :</label>
                         <div class="col-sm-10">
                             <input type="file" class="form-control" id="alamat" name="foto" required>
@@ -47,7 +41,6 @@ $curren_page = basename($_SERVER['PHP_SELF']);
 
                     $nama = $_POST['nama'];
                     $visi = $_POST['visi'];
-                    $misi = $_POST['misi'];
 
 
 
@@ -70,11 +63,11 @@ $curren_page = basename($_SERVER['PHP_SELF']);
                     move_uploaded_file($tmp_file, $folder . $namaBaru);
 
                     
-                    $query = "INSERT INTO tbl_calon(nama, visi, misi, foto) VALUES ('$nama','$visi','$misi','$namaBaru')";
+                    $query = "INSERT INTO tbl_calon(nama, visi, foto) VALUES ('$nama','$visi','$namaBaru')";
                     //insert into table
 
-                    // $query = "INSERT INTO tbl_calon(nama, visi, misi, foto) 
-                    // VALUES ('$nama','$visi','$misi','$namaBaru')";
+                    // $query = "INSERT INTO tbl_calon(nama, visi, , foto) 
+                    // VALUES ('$nama','$visi','$namaBaru')";
 
                     //success
                     if (mysqli_query($koneksi, $query)) {

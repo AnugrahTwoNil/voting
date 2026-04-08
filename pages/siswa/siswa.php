@@ -1,7 +1,11 @@
 
 <?php
+$pageTitle = "Siswa";
+
 include "../header/header.php";
 include "../header/config.php";
+
+
 
 $current_page = basename(path: $_SERVER['PHP_SELF']);
 ?>
@@ -30,6 +34,17 @@ $current_page = basename(path: $_SERVER['PHP_SELF']);
                         <div class="col-auto">
                         <a href="import_siswa.php" class="btn btn-danger ms-3" id="btn-dark">
                             Import DATA</a>
+                        </div>
+                        <div class="col-auto">
+                            <a href="../../Template_siswa.csv" class="btn btn-danger ms-3" id="btn-dark" download>
+                                Download Template Excel
+                            </a>
+                        </div>
+                        <div class="col-auto">
+                            <a href="#" class="btn btn-danger font-weight-bold" id="btn-danger"
+                                                onclick="hapusSEMUA()" data-toggle="tooltip"
+                                                data-original-title="Delete Siswa">Hapus Semua
+                            </a>
                         </div>
                     </div>
                 </form>
@@ -97,7 +112,7 @@ $current_page = basename(path: $_SERVER['PHP_SELF']);
                                             <a href="#"
                                                 class="btn btn-danger font-weight-bold" id="btn-danger"
                                                 onclick="hapusSiswa(<?= $row['id_siswa'] ?>)" data-toggle="tooltip"
-                                                data-original-title="Delete Siswa">Delete</a>
+                                                data-original-title="Delete Siswa">Hapus</a>
                                         </td>
                                     </tr>
                                     
@@ -212,16 +227,36 @@ $current_page = basename(path: $_SERVER['PHP_SELF']);
     <script>
         function hapusSiswa(id) {
             Swal.fire({
-                title: "Do you want to delete this student?",
+                title: "Apakah Anda ingin menghapus siswa ini?",
                 showDenyButton: true,
                 showCancelButton: true,
-                confirmButtonText: "Delete",
+                confirmButtonText: "Hapus",
                 denyButtonText: `Jangan Hapus`,
                 cancelButtonText: "Batalkan",
             }).then((result) => {
                 if (result.isConfirmed) {
-                    Swal.fire("Deleted!", "", "success");
+                    Swal.fire("Terhapus!", "", "Berhasil");
                     window.location = "delete_siswa.php?id=" + id;
+                } else if (result.isDenied) {
+                    Swal.fire("Data tidak dihapus", "", "info");
+                }
+            });
+        }
+
+        function hapusSEMUA() {
+            Swal.fire({
+                title: "Apakah Anda ingin menghapus semua siswa?",
+                text: "Data yang dihapus tidak dapat dikembalikan!",
+                icon: "warning",
+                showDenyButton: true,
+                showCancelButton: true,
+                confirmButtonText: "Hapus Semua",
+                denyButtonText: `Jangan Hapus`,
+                cancelButtonText: "Batalkan",
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    Swal.fire("Terhapus semua!", "", "Berhasil");
+                    window.location = "delete_all_siswa.php";
                 } else if (result.isDenied) {
                     Swal.fire("Data tidak dihapus", "", "info");
                 }
