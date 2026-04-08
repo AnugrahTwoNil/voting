@@ -1,3 +1,4 @@
+
 <?php
 include "../header/header.php";
 include "../header/config.php";
@@ -13,26 +14,38 @@ $current_page = basename(path: $_SERVER['PHP_SELF']);
                     <h6>Daftar siswa</h6>
                 </div>
                 <div class="card px-0 pt-0 pb-2">
-                <div class="table p-0">
-                        <a href="tambah_siswa.php" class="btn btn-danger ms-3 ">Tambah Siswa</a>
-                <form action="export_pdf_siswa.php" method="POST" target="_blank">
-                            <button type="submit" class="btn btn-danger ms-4">
-                            Export PDF
-                        </button>
+                <div class="table p-3">
+                    <form action="export_pdf_siswa.php" method="POST" target="_blank">
+                    <div class="row">
+                        <div class="col-auto">
+                            <a href="tambah_siswa.php" class="btn btn-danger font-weight-bold ms-3" id="btn-primary">Tambah Siswa</a>
+                        </div>
+                        <div class="col-auto">
+                            
+                            <button type="submit" class="btn btn-danger ms-3" id="btn-dark">
+                                Export PDF
+                            </button>
+                        </form>
+                        </div>
+                        <div class="col-auto">
+                        <a href="import_siswa.php" class="btn btn-danger ms-3" id="btn-dark">
+                            Import DATA</a>
+                        </div>
+                    </div>
                 </form>
                         <table class="table align-items-center mb-0">
                             <thead>
                                 <tr>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 text-center">
                                         No</th>
                                     <th
-                                        class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                        class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 text-center">
                                         Nama</th>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 text-center">
                                         Kelas</th>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 text-center">
                                         Jurusan</th>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 text-center">
                                         Alamat</th>
                                     <th
                                         class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
@@ -67,22 +80,22 @@ $current_page = basename(path: $_SERVER['PHP_SELF']);
                                         <td>
                                             <div class="d-flex py-1">
                                                 <div>
-                                                    <p class="mb-0 text-sm"><?= $row['kelas']; ?></p>
+                                                    <p class="mb-0 text-sm text-center"><?= $row['kelas']; ?></p>
                                                 </div>
                                             </div>
                                         </td>
                                         <td class="text-sm">
-                                            <p class="text-xs font-weight-bold mb-0"><?= $row['jurusan']; ?></p>
+                                            <p class="text-xs font-weight-bold mb-0 text-center"><?= $row['jurusan']; ?></p>
                                         </td>
                                         <td class="text-sm">
-                                            <p class="text-xs font-weight-bold mb-0"><?= $row['alamat']; ?></p>
+                                            <p class="text-xs font-weight-bold mb-0 text-center"><?= $row['alamat']; ?></p>
                                         </td>
                                         <td class="text-sm align-middle text-center">
-                                            <a href="edit_siswa.php?id=<?= $row['id_siswa']; ?>"
-                                                class="btn btn-primary font-weight-bold" data-toggle="tooltip"
+                                            <a href="edit_siswa.php?id=<?= $row['id_siswa']; ?>" id="btn-primary"
+                                                class="btn btn-danger font-weight-bold" data-toggle="tooltip"
                                                 data-original-title="Edit Siswa">Edit</a>
                                             <a href="#"
-                                                class="btn btn-danger font-weight-bold"
+                                                class="btn btn-danger font-weight-bold" id="btn-danger"
                                                 onclick="hapusSiswa(<?= $row['id_siswa'] ?>)" data-toggle="tooltip"
                                                 data-original-title="Delete Siswa">Delete</a>
                                         </td>

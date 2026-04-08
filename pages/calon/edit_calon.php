@@ -75,7 +75,7 @@ include "../header/header.php";
                             </div>
                         </div>
                         <div class="col-sm-10">
-                            <input type="file" class="form-control" id="foto" name="foto" placeholder="Masukan Foto" required
+                            <input type="file" class="form-control" id="foto" name="foto" placeholder="Masukan Foto"
                                 value="<?= $calon['foto'] ?>">
                         </div>
                     </div>

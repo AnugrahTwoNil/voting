@@ -1,3 +1,4 @@
+
 <?php
 include "../header/header.php";
 include "../header/config.php";
@@ -14,14 +15,23 @@ $current_page = basename($_SERVER['PHP_SELF']);
                     <h6>Daftar Calon</h6>
                 </div>
                 <div class="card px-0 pt-0 pb-2">
-                    <div class="table p-0">
-                        <a href="tambah_calon.php" class="btn btn-primary ms-3">Tambah Calon</a>
-                            <form action="export_pdf_calon.php" method="POST" target="_blank">
-                                <input type="hidden">
-                                    <button type="submit" class="btn btn-danger ms-4">
-                                        Export PDF
-                                    </button>
-                                </form>
+                    <div class="table p-3">
+                    <form action="export_pdf_calon.php" method="POST" target="_blank">
+                    <div class="row">
+                        <div class="col-auto">
+                            <a href="tambah_calon.php" class="btn btn-danger font-weight-bold ms-3" id="btn-primary">Tambah Calon</a>
+                        </div>
+                        <div class="col-auto">
+                            
+                            <button type="submit" class="btn btn-danger ms-3" id="btn-dark">
+                                Export PDF
+                            </button>
+                        </form>
+                        </div>
+                        <div class="col-auto">
+                        <a href="import_calon.php" class="btn btn-danger ms-3" id="btn-dark">
+                            Import DATA</a>
+                        </div>
                         <table class="table align-items-center mb-0">
                             <thead>
                                 <tr>
@@ -78,9 +88,9 @@ $current_page = basename($_SERVER['PHP_SELF']);
                             </div>
                         </td>
                         <td class="align-middle text-center">
-                            <a href="edit_calon.php?id=<?= $row['id_calon']; ?>" class="btn btn-primary font-weight-bold"
+                            <a href="edit_calon.php?id=<?= $row['id_calon']; ?>" class="btn btn-danger font-weight-bold" id="btn-primary"
                                 data-toggle="tooltip" data-original-title="Edit Calon">Edit</a>
-                            <a href="#" class="btn btn-danger font-weight-bold" data-toggle="tooltip"
+                            <a href="#" class="btn btn-danger font-weight-bold" data-toggle="tooltip" id="btn-danger"
                                 data-original-title="Delete Calon" onclick="hapusCalon(<?= $row['id_calon'] ?>)">Delete</a>
                         </td>
                         </tr>

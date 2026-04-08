@@ -33,6 +33,34 @@ $current_page = basename($_SERVER['PHP_SELF']);
     <script defer data-site="YOUR_DOMAIN_HERE" src="https://api.nepcha.com/js/nepcha-analytics.js"></script>
 </head>
 
+<style>
+    #btn-dark {
+        background-color: #333;
+        border-color: #333;  
+    }
+    #btn-dark:hover {
+        background-color: #555;
+        border-color: #555;  
+    }
+    #btn-primary {
+        background-color: #0077B5;
+        border-color: #0077B5;  
+    }
+    #btn-primary:hover {
+        background-color: #008CCC;
+        border-color: #008CCC;  
+    }
+
+    #btn-danger {
+        background-color: #B50000;
+        border-color: #B50000;  
+    }
+    #btn-danger:hover {
+        background-color: #F16060;
+        border-color: #F16060;  
+    }
+</style>
+
 <body class="g-sidenav-show  bg-gray-100">
     <aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3 "
         id="sidenav-main">
@@ -104,15 +132,6 @@ $current_page = basename($_SERVER['PHP_SELF']);
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link  " href="../../index.php">
-                        <div
-                            class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="20px"><!--!Font Awesome Free v7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path d="M530.8 134.1C545.1 144.5 548.3 164.5 537.9 178.8L281.9 530.8C276.4 538.4 267.9 543.1 258.5 543.9C249.1 544.7 240 541.2 233.4 534.6L105.4 406.6C92.9 394.1 92.9 373.8 105.4 361.3C117.9 348.8 138.2 348.8 150.7 361.3L252.2 462.8L486.2 141.1C496.6 126.8 516.6 123.6 530.9 134z"/></svg>
-                        </div>
-                        <span class="nav-link-text ms-1">Voting</span>
-                    </a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link <?= ($current_page == 'chart.php') ? 'active' : ''; ?>"
                         href="../admin/chart.php">
                         <div
@@ -158,7 +177,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
                                 href=""><?= $_SESSION['nama'] ?></a>
                         </li>
                         <li class="nav-item d-flex align-items-center">
-                            <a href="#" class="btn btn-danger btn-sm mb-0 me-3" onclick="Logout()">
+                            <a href="#" class="btn btn-danger btn-sm mb-0 me-3" onclick="Logout()" id="btn-danger">
                                 <i class="fa fa-user me-sm-1"></i>
                                 <span class="d-sm-inline d-none">Sign Out</span>
                             </a>

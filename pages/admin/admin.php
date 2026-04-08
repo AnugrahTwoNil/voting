@@ -1,3 +1,4 @@
+
 <?php
 include "../header/header.php";
 include "../header/config.php";
@@ -14,14 +15,23 @@ $current_page = basename($_SERVER['PHP_SELF']);
                     <h6>Daftar Admin</h6>
                 </div>
                 <div class="card px-0 pt-0 pb-2">
-                    <div class="table p-0">
-                        <a href="tambah_admin.php" class="btn btn-primary ms-3">Tambah Admin</a>
-                        <form action="export_pdf_admin.php" method="POST" target="_blank">
-                            <input type="hidden">
-                                <button type="submit" class="btn btn-danger ms-4">
-                                    Export PDF
-                                </button>
+                    <div class="table p-3">
+                    <form action="export_pdf_admin.php" method="POST" target="_blank">
+                    <div class="row">
+                        <div class="col-auto">
+                            <a href="tambah_admin.php" class="btn btn-danger font-weight-bold ms-3" id="btn-primary">Tambah Admin</a>
+                        </div>
+                        <div class="col-auto">
+                            
+                            <button type="submit" class="btn btn-danger ms-3" id="btn-dark">
+                                Export PDF
+                            </button>
                         </form>
+                        </div>
+                        <div class="col-auto">
+                        <a href="import_admin.php" class="btn btn-danger ms-3" id="btn-dark">
+                            Import DATA</a>
+                        </div>
                         <table class="table align-items-center mb-0">
                             <thead>
                                 <tr>
@@ -37,7 +47,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
                                     <th
                                         class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                         Password</th>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 text-center">
                                         Nama</th>
                                     <th
                                         class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
@@ -74,22 +84,22 @@ $current_page = basename($_SERVER['PHP_SELF']);
                                             </div>
                                         </td>
                                         <td class="text-sm">
-                                            <p class="mb-0 text-sm"><?= $row['password']; ?></p>
+                                            <p class="mb-0 text-sm text-center"><?= $row['password']; ?></p>
                                         </td>
                                         <td class="align-middle text-sm">
-                                            <p class="text-xs font-weight-bold mb-0"><?= $row['nama']; ?></p>
+                                            <p class="text-xs font-weight-bold mb-0 text-center"><?= $row['nama']; ?></p>
                                         </td>
                                         <td class="text-sm">
-                                            <p class="text-xs font-weight-bold mb-0"><?= $row['alamat']; ?></p>
+                                            <p class="text-xs font-weight-bold mb-0 text-center"><?= $row['alamat']; ?></p>
                                         </td>
 
                                         <td class="align-middle text-center">
                                             <a href="edit_admin.php?id=<?= $row['id_admin']; ?>"
-                                                class="btn btn-primary font-weight-bold" data-toggle="tooltip"
+                                                class="btn btn-danger font-weight-bold" data-toggle="tooltip" id="btn-primary"
                                                 data-original-title="Edit Admin">Edit</a>
 
                                             <a href="#" class="btn btn-danger font-weight-bold" data-toggle="tooltip"
-                                                data-original-title="Delete Admin"
+                                                data-original-title="Delete Admin" id="btn-danger"
                                                 onclick="hapusAdmin(<?= $row['id_admin'] ?>)">Delete</a>
                                         </td>
                                     </tr>
