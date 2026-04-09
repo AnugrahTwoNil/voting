@@ -30,6 +30,7 @@ if(!empty($chartImage)) {
 
 //TABEL
 $html .= '
+
 <table border="1" cellpadding="5">
     <thead>
         <tr style="background-color:#f2f2f2;">

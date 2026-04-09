@@ -19,7 +19,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
                         <h3>Import Data Calon</h3>
                     </div>
                         <div class="col-auto">
-                            <a href="../../Template_siswa.csv" class="btn btn-danger ms-4" id="btn-dark" download>
+                            <a href="../../Template_calon.csv" class="btn btn-danger ms-4" id="btn-dark" download>
                                 Download Template Excel
                             </a>
                         </div>

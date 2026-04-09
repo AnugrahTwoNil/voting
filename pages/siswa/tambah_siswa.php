@@ -22,6 +22,18 @@ $current_page = basename($_SERVER['PHP_SELF']);
                         </div>
                     </div>
                     <div class="row mb-3">
+                        <label for="nama" class="col-sm-2 col-form-label">Username :</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="username" name="username" placeholder="Masukan Username" required>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="nama" class="col-sm-2 col-form-label">Password :</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="password" name="password" placeholder="Masukan Password" required>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
                         <label for="email" class="col-sm-2 col-form-label">Email :</label>
                         <div class="col-sm-10">
                             <input type="email" class="form-control" id="email" name="email" placeholder="Masukan Email" required>
@@ -64,6 +76,8 @@ $current_page = basename($_SERVER['PHP_SELF']);
 
                     $nama = $_POST['nama'];
                     $kelas = $_POST['kelas'];
+                    $username = $_POST['username'];
+                    $password = $_POST['password'];
                     $jurusan = $_POST['jurusan'];
                     $alamat = $_POST['alamat'];
                     $email = $_POST['email'];
@@ -77,8 +91,8 @@ $current_page = basename($_SERVER['PHP_SELF']);
                     
                     move_uploaded_file($tmp_file, $folder . $namaBaru);
 
-                    $query = "INSERT INTO tbl_siswa(nama, kelas, jurusan, alamat, email, foto) 
-                    VALUES ('$nama','$kelas','$jurusan','$alamat','$email','$namaBaru')";
+                    $query = "INSERT INTO tbl_siswa(nama, kelas, username, password, jurusan, alamat, email, foto) 
+                    VALUES ('$nama','$kelas','$username','$password','$jurusan','$alamat','$email','$namaBaru')";
 
                     $result = mysqli_query($koneksi, $query);
 

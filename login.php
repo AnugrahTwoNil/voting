@@ -8,11 +8,11 @@ include("pages/header/config.php");
 <html lang="en">
 
 <head>
-	<title>Login V18</title>
+	<title>Login Siswa</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!--===============================================================================================-->
-	<link rel="icon" type="image/png" href="asset_login/images/icons/favicon.ico" />
+	<link rel="icon" type="image/png" href="assets/img/logo osis.png" />
 	<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="asset_login/vendor/bootstrap/css/bootstrap.min.css">
 	<!--===============================================================================================-->

@@ -220,7 +220,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
             cancelButtonColor: '#0077B5',
         }).then((result) => {
             if (result.isConfirmed) {
-                Swal.fire("Dihapus!", "", "success");
+                Swal.fire("Terhapus!", "", "success");
                 window.location.href = 'delete_calon.php?id=' + id;
             } else if (result.isDenied) {
                 Swal.fire("Data tidak dihapus", "", "info");

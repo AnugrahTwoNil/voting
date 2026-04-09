@@ -30,15 +30,13 @@ if (isset($_FILES['file_excel']['tmp_name'])) {
         $kelas    = $row[1];
         $jurusan  = $row[2];
         $alamat   = $row[3];
-        $foto     = $row[4];
-        $email    = $row[5];
-        $username = $row[6];
-        $password = $row[7];
+        $username = $row[4];
+        $password = $row[5];
+        $email    = $row[6];
+        $foto     = $row[7];
 
     mysqli_query($koneksi, "INSERT INTO tbl_siswa(nama, kelas, jurusan, alamat, username , password , email, foto) 
                     VALUES ('$nama','$kelas','$jurusan','$alamat','$username','$password','$email','$foto')");
-
-
 
         $no++;
     }
@@ -53,7 +51,7 @@ if (isset($_FILES['file_excel']['tmp_name'])) {
             text: 'Data Berhasil Disimpan!',
             icon: 'success'
         }).then(() => {
-            window.location.href = 'calon.php';
+            window.location.href = 'siswa.php';
         });
     </script>";
                     } else {

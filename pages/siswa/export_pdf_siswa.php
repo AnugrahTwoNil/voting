@@ -17,6 +17,7 @@ $html = ' ';
 
 //TABEL
 $html .= '
+<h2>Daftar Siswa SMK PESAT</h2>
 <table border="1" cellpadding="5">
     <thead>
         <tr style="background-color:#f2f2f2;">

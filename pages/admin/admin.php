@@ -232,7 +232,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
                 cancelButtonColor: '#0077B5',
             }).then((result) => {
                 if (result.isConfirmed) {
-                    Swal.fire("Deleted!", "", "success");
+                    Swal.fire("Terhapus!", "", "success");
                     window.location = "delete_admin.php?id=" + id;
                 } else if (result.isDenied) {
                     Swal.fire("Data tidak dihapus", "", "info");

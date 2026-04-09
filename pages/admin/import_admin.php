@@ -19,7 +19,7 @@
                             <h3>Import Data Admin</h3>
                         </div>
                         <div class="col-auto">
-                            <a href="../../Template_siswa.csv" class="btn btn-danger ms-4" id="btn-dark" download>
+                            <a href="../../Template_admin.csv" class="btn btn-danger ms-4" id="btn-dark" download>
                                 Download Template Excel
                             </a>
                         </div>

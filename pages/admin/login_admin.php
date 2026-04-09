@@ -9,11 +9,11 @@ session_start();
 <html lang="en">
 
 <head>
-	<title>Login V18</title>
+	<title>Login Admin</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!--===============================================================================================-->
-	<link rel="icon" type="image/png" href="../../asset_login/images/icons/favicon.ico" />
+	<link rel="icon" type="image/png" href="../../assets/img/logo osis.png" />
 	<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="../../asset_login/vendor/bootstrap/css/bootstrap.min.css">
 	<!--===============================================================================================-->
@@ -61,6 +61,8 @@ session_start();
 					</div>
 
 
+
+
 					<div class="container-login100-form-btn">
 						<button class="login100-form-btn">
 							Login
@@ -80,21 +82,21 @@ session_start();
 
 
 	<!--===============================================================================================-->
-	<script src="asset_login/vendor/jquery/jquery-3.2.1.min.js"></script>
+	<script src="../../asset_login/vendor/jquery/jquery-3.2.1.min.js"></script>
 	<!--===============================================================================================-->
-	<script src="asset_login/vendor/animsition/js/animsition.min.js"></script>
+	<script src="../../asset_login/vendor/animsition/js/animsition.min.js"></script>
 	<!--===============================================================================================-->
-	<script src="asset_login/vendor/bootstrap/js/popper.js"></script>
-	<script src="asset_login/vendor/bootstrap/js/bootstrap.min.js"></script>
+	<script src="../../asset_login/vendor/bootstrap/js/popper.js"></script>
+	<script src="../../asset_login/vendor/bootstrap/js/bootstrap.min.js"></script>
 	<!--===============================================================================================-->
-	<script src="asset_login/vendor/select2/select2.min.js"></script>
+	<script src="../../asset_login/vendor/select2/select2.min.js"></script>
 	<!--===============================================================================================-->
-	<script src="asset_login/vendor/daterangepicker/moment.min.js"></script>
-	<script src="asset_login/vendor/daterangepicker/daterangepicker.js"></script>
+	<script src="../../asset_login/vendor/daterangepicker/moment.min.js"></script>
+	<script src="../../asset_login/vendor/daterangepicker/daterangepicker.js"></script>
 	<!--===============================================================================================-->
-	<script src="asset_login/vendor/countdowntime/countdowntime.js"></script>
+	<script src="../../asset_login/vendor/countdowntime/countdowntime.js"></script>
 	<!--===============================================================================================-->
-	<script src="asset_login/js/main.js"></script>
+	<script src="../../asset_login/js/main.js"></script>
 
 </body>
 

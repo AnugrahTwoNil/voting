@@ -50,7 +50,15 @@ $current_page = basename(path: $_SERVER['PHP_SELF']);
                                         No</th>
                                     <th
                                         class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 text-center">
+                                        </th>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 text-center">
                                         Nama</th>
+                                    <th
+                                        class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 text-center">
+                                        Username</th>
+                                    <th
+                                        class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 text-center">
+                                        Password</th>
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 text-center">
                                         Kelas</th>
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 text-center">
@@ -79,11 +87,25 @@ $current_page = basename(path: $_SERVER['PHP_SELF']);
                                                     <img src="../../assets/img<?= $row['foto']; ?>" alt="" class="avatar avatar-md rounded-circle"
                                                     style="width: 100px; height: 100px; object-fit: cover;">
                                                 </div>
-                                                <div class="col ms-5" style="margin-top: 40px;"><p><?= $row['nama']; ?></p></div>
                                             </div>
                                             <div class="row">
                                                 <div class="col">
                                                     <p class="text-xs font-weight-bold mb-0 mt-3"><?= $row['email']; ?></p>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td> 
+                                            <div class="col ms-5 text-wrap"><p class="text-sm font-weight-bold mb-0"><?= $row['nama']; ?></p></div>
+                                        </td>
+                                        <td>
+                                                <div>
+                                                    <p class="mb-0 text-sm text-center"><?= $row['username']; ?></p>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                                <div>
+                                                    <p class="mb-0 text-sm text-center"><?= $row['password']; ?></p>
                                                 </div>
                                             </div>
                                         </td>
@@ -232,7 +254,7 @@ $current_page = basename(path: $_SERVER['PHP_SELF']);
                 cancelButtonColor: '#0077B5',
             }).then((result) => {
                 if (result.isConfirmed) {
-                    Swal.fire("Terhapus!", "", "Berhasil");
+                    Swal.fire("Terhapus!", "", "success");
                     window.location = "delete_siswa.php?id=" + id;
                 } else if (result.isDenied) {
                     Swal.fire("Data tidak dihapus", "", "info");
@@ -252,7 +274,7 @@ $current_page = basename(path: $_SERVER['PHP_SELF']);
                 cancelButtonColor: '#0077B5',
             }).then((result) => {
                 if (result.isConfirmed) {
-                    Swal.fire("Terhapus semua!", "", "Berhasil");
+                    Swal.fire("Terhapus semua!", "", "success");
                     window.location = "delete_all_siswa.php";
                 } else if (result.isDenied) {
                     Swal.fire("Data tidak dihapus", "", "info");

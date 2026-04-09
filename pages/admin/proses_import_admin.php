@@ -51,7 +51,7 @@ if (isset($_FILES['file_excel']['tmp_name'])) {
             text: 'Data Berhasil Disimpan!',
             icon: 'success'
         }).then(() => {
-            window.location.href = 'calon.php';
+            window.location.href = 'admin.php';
         });
     </script>";
                     } else {

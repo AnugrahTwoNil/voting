@@ -21,6 +21,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $_SESSION['login'] = true;
         $_SESSION['nama'] = $data['nama'];
         $_SESSION['id_siswa'] = $data['id_siswa'];
+    } else {
+        $_SESSION['login'] = false;
     }
 }
 
@@ -31,7 +33,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     </head>
     <body>
         <script>
-            Swal.fire({
+<?php
+        if (isset($_SESSION['login']) && $_SESSION['login'] === true) {
+            echo "Swal.fire({
                 title: 'Login Berhasil',
                 text: 'Selamat datang di website Voting SMK PESAT',
                 icon: 'success',
@@ -39,6 +43,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 timer: 2500
             }).then(() => {
                 window.location.href = 'index.php';
-            });
+            });";
+        } elseif (isset($_SESSION['login']) && $_SESSION['login'] === false) {
+            echo "Swal.fire({
+                title: 'Login Gagal',
+                text: 'Username atau Password salah, silahkan coba lagi',
+                icon: 'error',
+                showConfirmButton: false,
+                timer: 2500
+            }).then(() => {
+                window.location.href = 'login.php';
+            });";
+        }
+        ?>
         </script>
 </html>
