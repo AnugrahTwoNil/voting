@@ -90,7 +90,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link <?= ($current_page == 'siswa.php' || $current_page == 'edit_siswa.php' || $current_page == 'tambah_siswa.php') ? 'active' : ''; ?>"
+                    <a class="nav-link <?= ($current_page == 'siswa.php' || $current_page == 'edit_siswa.php' || $current_page == 'tambah_siswa.php' || $current_page == 'import_siswa.php') ? 'active' : ''; ?>"
                         href="../siswa/siswa.php">
                         <div
                             class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
@@ -104,7 +104,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link <?= ($current_page == 'admin.php' || $current_page == 'tambah_admin.php' || $current_page == 'edit_admin.php') ? 'active' : ''; ?>"
+                    <a class="nav-link <?= ($current_page == 'admin.php' || $current_page == 'tambah_admin.php' || $current_page == 'edit_admin.php' || $current_page == 'import_admin.php') ? 'active' : ''; ?>"
                         href="../admin/admin.php">
                         <div
                             class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
@@ -118,7 +118,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link <?= ($current_page == 'calon.php' || $current_page == 'tambah_calon.php' || $current_page == 'edit_calon.php') ? 'active' : ''; ?>"
+                    <a class="nav-link <?= ($current_page == 'calon.php' || $current_page == 'tambah_calon.php' || $current_page == 'edit_calon.php' || $current_page == 'import_calon.php') ? 'active' : ''; ?>"
                         href="../calon/calon.php">
                         <div
                             class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">

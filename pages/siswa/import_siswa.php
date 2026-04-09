@@ -1,8 +1,10 @@
 <?php
+$pageTitle = "Siswa";
+
 include "../header/header.php";
 include "../header/config.php";
 
-$current_page = basename(path: $_SERVER['PHP_SELF']);
+$current_page = basename($_SERVER['PHP_SELF']);
 ?>
 
 <div class="container-fluid py-4">
@@ -16,10 +18,15 @@ $current_page = basename(path: $_SERVER['PHP_SELF']);
                     <div class="card-body">
                         <h3>Import Data Siswa</h3>
                     </div>
-                    <div class="d-flex ms-3">
-                        <form action="proses_import_siswa.php" method="POST" enctype="multipart/form-data" class="d-flex align-items-center gap-3 p-3 shadow-sm rounded">
-                            <input type="file" name="file_excel" class="form-control">
-                            <button type="submit" class="btn btn-primary mt-3">Import</button>
+                        <div class="col-auto">
+                            <a href="../../Template_siswa.csv" class="btn btn-danger ms-4" id="btn-dark" download>
+                                Download Template Excel
+                            </a>
+                        </div>
+                    <div class="d-flex ms-4">
+                        <form action="proses_import_siswa.php" method="POST" enctype="multipart/form-data" class="d-flex align-items-center gap-3 p-4 shadow-sm rounded">
+                            <input type="file" name="file_excel" class="form-control" required>
+                            <button type="submit" class="btn btn-danger mt-3" id="btn-primary">Import</button>
                         </form>
                     </div>
                 </div>

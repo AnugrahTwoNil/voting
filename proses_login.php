@@ -20,13 +20,25 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         //simpan dalam session
         $_SESSION['login'] = true;
         $_SESSION['nama'] = $data['nama'];
-        $_SESSION['id_siswa'] = $data['id'];
-
-        //kalau login berhasil berarahkan ke index.php
-        echo "<script>alert('Login Berhasil'); window.location='index.php';</script>";
-    } else {
-        echo "<script> alert('Login gagal'); window.location='login.php';</script>";
+        $_SESSION['id_siswa'] = $data['id_siswa'];
     }
 }
 
 ?>
+<html>
+    <head>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    </head>
+    <body>
+        <script>
+            Swal.fire({
+                title: 'Login Berhasil',
+                text: 'Selamat datang di website Voting SMK PESAT',
+                icon: 'success',
+                showConfirmButton: false,
+                timer: 2500
+            }).then(() => {
+                window.location.href = 'index.php';
+            });
+        </script>
+</html>

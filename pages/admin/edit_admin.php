@@ -1,4 +1,6 @@
 <?php
+$pageTitle = "Admin";
+
 include "../header/config.php";
 
 $current_page = basename($_SERVER['PHP_SELF']);

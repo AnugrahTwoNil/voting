@@ -1,4 +1,6 @@
 <?php
+$pageTitle = "Calon Ketua OSIS";
+
 include "../header/header.php";
 include "../header/config.php";
 

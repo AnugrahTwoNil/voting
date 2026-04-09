@@ -1,4 +1,6 @@
 <?php
+$pageTitle = "Siswa";
+
 include "../header/header.php";
 include "../header/config.php";
 

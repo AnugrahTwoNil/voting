@@ -36,11 +36,6 @@ $current_page = basename($_SERVER['PHP_SELF']);
                             Import DATA</a>
                         </div>
                         <div class="col-auto">
-                            <a href="../../Template_calon.csv" class="btn btn-danger ms-3" id="btn-dark" download>
-                                Download Template Excel
-                            </a>
-                        </div>
-                        <div class="col-auto">
                             <a href="#" class="btn btn-danger font-weight-bold" id="btn-danger"
                                 onclick="hapusSEMUA()" data-toggle="tooltip"
                                     data-original-title="Delete Siswa">Hapus Semua
@@ -218,10 +213,11 @@ $current_page = basename($_SERVER['PHP_SELF']);
     function hapusCalon(id) {
         Swal.fire({
             title: "Apakah Anda Yakin?",
-            showDenyButton: true,
+            icon: "warning",
             showCancelButton: true,
             confirmButtonText: "Hapus",
-            denyButtonText: `Jangan Hapus`
+            confirmButtonColor: '#B50000',
+            cancelButtonColor: '#0077B5',
         }).then((result) => {
             if (result.isConfirmed) {
                 Swal.fire("Dihapus!", "", "success");
@@ -237,11 +233,11 @@ $current_page = basename($_SERVER['PHP_SELF']);
                 title: "Apakah Anda Yakin?",
                 text: "Data yang dihapus tidak dapat dikembalikan!",
                 icon: "warning",
-                showDenyButton: true,
                 showCancelButton: true,
                 confirmButtonText: "Hapus Semua",
-                denyButtonText: `Jangan Hapus`,
                 cancelButtonText: "Batalkan",
+                confirmButtonColor: '#B50000',
+                cancelButtonColor: '#0077B5',
             }).then((result) => {
                 if (result.isConfirmed) {
                     Swal.fire("Terhapus semua!", "", "Berhasil");
