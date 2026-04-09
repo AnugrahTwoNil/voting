@@ -96,7 +96,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
                 <div class="col-md-4">
                   <div class="card text-center shadow calon-card" onclick="pilihcalon(<?= $row['id_calon'] ?>, this)">
                     <div class="card-body">
-                      <img src="assets/img<?= $row['foto']; ?>" style="object-fit: cover; Width: 200px; height: 200px;" class="mb-3 rounded-circle">
+                      <img src="assets/img/<?= ltrim($row['foto'], '/'); ?>" style="object-fit: cover; Width: 200px; height: 200px;" class="mb-3 rounded-circle">
                       <h5 class="card-title"><?= $row['nama']; ?></h5>
                       <p class="card-text"><?= $row['visi']; ?></p>
                     </div>

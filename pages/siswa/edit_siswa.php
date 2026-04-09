@@ -18,6 +18,8 @@ include "../header/header.php";
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     $nama = $_POST['nama'];
+    $username = $_POST['username'];
+    $password = $_POST['password'];
     $kelas = $_POST['kelas'];
     $jurusan = $_POST['jurusan'];
     $alamat = $_POST['alamat'];
@@ -25,6 +27,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     $result = mysqli_query($koneksi, "UPDATE tbl_siswa SET 
         nama = '$nama',
+        username = '$username',
+        password = '$password',
         kelas = '$kelas',
         jurusan = '$jurusan',
         alamat = '$alamat',
@@ -41,6 +45,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         $sql = "UPDATE tbl_siswa SET
         nama = '$nama',
+        username = '$username',
+        password = '$password',
         email = '$email',
         kelas = '$kelas',
         jurusan = '$jurusan',
@@ -51,6 +57,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     } else {
         $sql = "UPDATE tbl_siswa SET
         nama = '$nama',
+        username = '$username',
+        password = '$password',
         email = '$email',
         kelas = '$kelas',
         jurusan = '$jurusan',
@@ -92,6 +100,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         </div>
                     </div>
                     <div class="row mb-3">
+                        <label for="username" class="col-sm-2 col-form-label">Username :</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="username" name="username" placeholder="Masukan username" required
+                                value="<?= $siswa['username'] ?>">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="password" class="col-sm-2 col-form-label">Password :</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="password" name="password" placeholder="Masukan password" required
+                                value="<?= $siswa['password'] ?>">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
                         <label for="email" class="col-sm-2 col-form-label">Email :</label>
                         <div class="col-sm-10">
                             <input type="text" class="form-control" id="email" name="email" placeholder="Masukan email" required
@@ -123,7 +145,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         <label for="foto" class="col-sm-2 col-form-label">Foto :</label>
                         <div class="row">
                             <div class="col">
-                                <img src="../../assets/img<?= $siswa['foto']; ?>" class="avatar avatar-md rounded-circle"
+                                <img src="../../assets/img/<?= $siswa['foto']; ?>" class="avatar avatar-md rounded-circle"
                                                     style="width: 100px; height: 100px; object-fit: cover; margin-bottom: 20px;"
                                     >
 
